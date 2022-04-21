@@ -1,0 +1,19 @@
+
+<div *ngIf='contLoaded|async; then thenBlock else elseBlock;'></div>
+<ng-template #thenBlock (ngModel)="loaded" (onModelChange)="sendBackFirstLoad()">
+    <div>
+        <mat-card *ngFor='let product of loaded'>
+            <mat-card-header>
+            <mat-card-title>{{product.name}}</mat-card-title>
+            <mat-card-subtitle>{{product.brand}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image [src]='product.api_featured_image'>
+            <mat-card-content>
+            <p>{{product.price_sign}}{{product.price}}</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</ng-template>
+<ng-template #elseBlock>
+    <p>bye</p>
+</ng-template>
