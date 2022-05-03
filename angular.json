@@ -28,7 +28,12 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/ngx-auth-firebaseui/assets/",
+                "output": "./assets/"
+              }
             ],
             "styles": [
               "src/styles.scss"
@@ -41,12 +46,12 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "10mb"
                 },
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumError": "40kb"
                 }
               ],
               "fileReplacements": [
@@ -70,9 +75,14 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options":{
+            "browserTarget": "makeupProject:build",
+
+          },
           "configurations": {
             "production": {
-              "browserTarget": "makeupProject:build:production"
+              "browserTarget": "makeupProject:build:production",
+              
             },
             "development": {
               "browserTarget": "makeupProject:build:development"
@@ -83,7 +93,8 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "makeupProject:build"
+            "browserTarget": "makeupProject:build",
+            
           }
         },
         "test": {
@@ -96,12 +107,27 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/ngx-auth-firebaseui/assets/",
+                "output": "./assets/"
+              }
             ],
             "styles": [
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "makeupProject:build:production",
+            "firebaseProject": "makeup-d57e6",
+            "firebaseHostingSite": "makeup-d57e6"
           }
         }
       }

@@ -1,10 +1,10 @@
 
-<div *ngIf='contLoaded|async; then thenBlock else elseBlock;'></div>
-<ng-template #thenBlock (ngModel)="loaded" (onModelChange)="sendBackFirstLoad()">
-    <div>
-        <mat-card *ngFor='let product of loaded'>
+<div class="toot" *ngIf='contLoaded|async; then thenBlock else elseBlock;'></div>
+<ng-template #thenBlock >
+    <div class="org">
+        <mat-card *ngFor='let product of loaded' (click)="getId(product.id)">
             <mat-card-header>
-            <mat-card-title>{{product.name}}</mat-card-title>
+            <mat-card-title >{{product.name}}</mat-card-title>
             <mat-card-subtitle>{{product.brand}}</mat-card-subtitle>
             </mat-card-header>
             <img mat-card-image [src]='product.api_featured_image'>
@@ -15,5 +15,16 @@
     </div>
 </ng-template>
 <ng-template #elseBlock>
-    <p>bye</p>
+    <div class="org" >
+        <mat-card *ngFor='let id of vale' >
+            <mat-card-header class="cont_box pulse">
+            <mat-card-title class=""></mat-card-title>
+            <mat-card-subtitle class=""></mat-card-subtitle>
+            </mat-card-header>
+            <div class="pulse img_box"></div>
+            <mat-card-content class="pulse cont_box"> 
+            <p></p>
+            </mat-card-content>
+        </mat-card>
+    </div>
 </ng-template>

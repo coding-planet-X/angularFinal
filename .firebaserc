@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "makeup-d57e6"
+  },
+  "targets": {
+    "makeup-d57e6": {
+      "hosting": {
+        "makeupProject": [
+          "makeup-d57e6"
+        ]
+      }
+    }
+  }
+}
