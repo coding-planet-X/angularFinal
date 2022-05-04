@@ -15,7 +15,7 @@ export class MakeupService {
   loggedIn=false;
   the_id!:number
   product_type:string[] = ['blush','bronzer','eyebrow','eyeliner','eyeshadow','foundation','lip_liner','lipstick','mascara','nail_polish']
-  brand:Brand[] = [{name:'none', value:undefined},
+  brand:Brand[] = [//{name:'none', value:undefined},
                    {name:'almay',value:"almay"},
                    {name:'alva',value:'alva'},
                    {name:'anna sui', value:'anna%20sui'},
@@ -147,11 +147,11 @@ export class MakeupService {
     }),
     catchError(this.errorHandler)
     )
-   }
+   }*/
   addProducts() {
-    for(let i =0;i<this.products.length;i++){
-      this.db.collection('products').add(this.products[i])
-    }
-  }*/
+    
+      this.db.collection('users').doc
+    
+  }
    
 }

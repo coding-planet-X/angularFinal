@@ -6,11 +6,13 @@ import {LoginComponent} from '../components/login/login.component'
 import {SignupComponent} from '../components/signup/signup.component'
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireAuthGuard, canActivate } from '@angular/fire/compat/auth-guard';
+import {CartComponent} from './../components/cart/cart.component'
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch:'full'},
   {path: 'login', component: LoginComponent},
   {path: 'home', component: ProductSearchComponent,canActivate:[AngularFireAuthGuard]},
-  {path:'details/:id', component:DetailsComponent, canActivate:[AngularFireAuthGuard]}
+  {path:'details/:id', component:DetailsComponent, canActivate:[AngularFireAuthGuard]},
+  {path: 'checkout', component: CartComponent,canActivate:[AngularFireAuthGuard]},
 ];
 
 @NgModule({

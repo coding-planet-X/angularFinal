@@ -15,10 +15,16 @@ export class SidenavComponent implements OnInit {
       icon:'home'
     },
     {
+      name:"checkout",
+      route:'/checkout',
+      icon:'shopping_cart_checkout'
+    },
+    {
       name:'Login/logout',
       route:'/login',
       icon:"login"
-    }
+    },
+    
   ]
   cookieValue!:string
   constructor(private makeserv:MakeupService,

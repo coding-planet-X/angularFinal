@@ -94,13 +94,6 @@ export class ProductSearchComponent implements OnInit {
     })
 
     }
-    else{
-      await this.makeserv.getProducts().subscribe((oba) =>{
-        this.loaded = oba
-  
-        this.contLoaded = Promise.resolve(true)
-      })
-    }
 
 
 }
