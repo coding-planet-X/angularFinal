@@ -1,0 +1,16 @@
+<div>
+<h1>{{product.name}}</h1>
+<h2>{{product.brand}}</h2>
+<h4>product type: {{product.product_type}}</h4>
+</div>
+<div class="maxx">
+    <img [src]='product.api_featured_image'>
+    <div>
+        <p>category: {{product.category}}</p>
+        <p>description</p>
+        <p>{{product.description}}</p>
+        <p>price:{{product.price_sign}}{{product.price}}</p>
+        
+    </div>
+</div>
+<app-detail-rec [product_type]='product.product_type' ></app-detail-rec>

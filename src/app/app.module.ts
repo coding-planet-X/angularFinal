@@ -22,6 +22,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import {APP_BASE_HREF} from '@angular/common';
+import { DetailRecComponent } from './components/detail-rec/detail-rec.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import {APP_BASE_HREF} from '@angular/common';
     CartComponent,
     DetailsComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    DetailRecComponent
   ],
   imports: [
     BrowserModule,

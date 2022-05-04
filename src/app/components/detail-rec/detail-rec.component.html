@@ -1,0 +1,13 @@
+<div class="org">
+    <mat-card *ngFor='let product of reco|slice:reco.length-5' (click)="getId(product.id)">
+        <mat-card-header>
+        <mat-card-title >{{product.name}}</mat-card-title>
+        <mat-card-subtitle>{{product.brand}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]='product.api_featured_image'>
+        <mat-card-content>
+        <p>{{product.price_sign}}{{product.price}}</p>
+        </mat-card-content>
+        <mat-card-actions><button mat-fab><mat-icon>add_shopping_cart</mat-icon></button></mat-card-actions>
+    </mat-card>
+</div>
